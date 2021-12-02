@@ -31,11 +31,12 @@ While @DateInProcess <= @EndDate
 Go
 
 -- usuwanie bazy pomocniczej
-USE auxiliary;
+/*USE auxiliary;
 DROP TABLE holidays;
 
 USE master;
 DROP DATABASE auxiliary;
-GO
+GO*/
 
+use Hurtownia
 select * from Termin

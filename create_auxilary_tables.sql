@@ -1,4 +1,6 @@
 USE master;
+drop database auxiliary;
+
 CREATE DATABASE auxiliary  collate Latin1_General_CI_AS;
 GO
 
