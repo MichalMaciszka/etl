@@ -10,3 +10,5 @@ CREATE TABLE holidays(date DATETIME PRIMARY KEY, holiday VARCHAR(500), bank_holi
 
 USE master;
 GO
+
+select * from auxiliary.dbo.holidays

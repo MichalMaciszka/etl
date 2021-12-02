@@ -1,7 +1,6 @@
 use Hurtownia
 go
 
--- pomocnicze zmienne
 Declare @StartDate date; 
 Declare @EndDate date;
 SELECT @StartDate = '1980-01-01', @EndDate = '2015-12-31';

@@ -1,4 +1,5 @@
 USE Hurtownia
+SET LANGUAGE Polish
 GO
 
 CREATE TABLE dbo.cars_db(
@@ -36,7 +37,7 @@ WITH (
 )
 go
 
-bulk insert dbo.cars_db from 'C:\Users\t-ja1\OneDrive\Pulpit\etl\cars_DB_data_t1'
+bulk insert dbo.cars_db from 'C:\Users\t-ja1\OneDrive\Pulpit\etl\cars_DB_data_t2'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = ',',
