@@ -19,7 +19,7 @@ CREATE TABLE TMP_Zlecenie(
 	Mechanik varchar(11)
 )
 
-ALTER TABLE Skarga ADD old_order_id int
+-- ALTER TABLE Skarga ADD old_order_id int
 
 bulk insert dbo.TMP_Zlecenie from 'C:\Users\t-ja1\OneDrive\Pulpit\etl\orders_data_t2' WITH (
 	FIRSTROW = 2,
@@ -67,7 +67,7 @@ go
 select * from Proper_TMP
 
 
-MERGE INTO Skarga as S USING Proper_TMP as TMP ON S.ID_termin_zlozenia = TMP.ID_Termin AND S.Tresc = TMP.Tresc
+MERGE INTO Skarga as S USING Proper_TMP as TMP ON S.ID_termin_zlozenia = TMP.ID_Termin AND S.old_order_id = TMP.old_id
 	WHEN NOT MATCHED
 	THEN
 		INSERT VALUES (
@@ -82,7 +82,7 @@ select * from Skarga
 drop view Proper_TMP
 drop view skargi_temp
 
-insert into Skarga VALUES(NULL, (SELECT Termin.Termin_ID FROM Termin WHERE CAST(DAY('1980-1-1') as int) = Termin.Dzien AND CAST(DATENAME(month, '1980-1-1') as varchar(11)) = Termin.Miesiac AND CAST(YEAR('1980-1-1') as int) = Termin.Rok), NULL)
+-- insert into Skarga VALUES(NULL, (SELECT Termin.Termin_ID FROM Termin WHERE CAST(DAY('1980-1-1') as int) = Termin.Dzien AND CAST(DATENAME(month, '1980-1-1') as varchar(11)) = Termin.Miesiac AND CAST(YEAR('1980-1-1') as int) = Termin.Rok), NULL)
 
 go
 CREATE VIEW tmpV_zlecenie AS

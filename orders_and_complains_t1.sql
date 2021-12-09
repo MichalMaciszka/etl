@@ -130,4 +130,4 @@ THEN
 drop view tmpV_zlecenie
 drop table TMP_Skarga
 drop table TMP_Zlecenie
-ALTER TABLE Skarga DROP COLUMN old_order_id
+-- ALTER TABLE Skarga DROP COLUMN old_order_id
