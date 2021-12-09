@@ -6,7 +6,7 @@ CREATE TABLE Klient
 (
 	Klient_ID INTEGER IDENTITY(1, 1) PRIMARY KEY,
 	ImieNazwisko VARCHAR(80),
-	Nr_telefonu VARCHAR(15),
+	Nr_telefonu VARCHAR(20),
 	Pesel VARCHAR(11)
 )
 
@@ -34,7 +34,7 @@ CREATE TABLE Samochod
 	Rodzaj_pojemnosc_silnika VARCHAR(14) CHECK (Rodzaj_pojemnosc_silnika IN (
 			'ma³y benzyna', 'œredni benzyna', 'du¿y benzyna', 
 			'ma³y diesel', 'œredni diesel', 'du¿y diesel')),
-	Stan_licznika VARCHAR(6) CHECK (Stan_licznika IN (
+	Stan_licznika VARCHAR(10) CHECK (Stan_licznika IN (
 		'ma³y', 'œredni', 'du¿y')),
 	Czy_powypadkowy VARCHAR(12) CHECK (Czy_powypadkowy IN (
 		'powypadkowy', 'bezwypadkowy')),
