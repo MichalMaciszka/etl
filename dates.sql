@@ -15,7 +15,8 @@ While @DateInProcess <= @EndDate
 				CAST(DATENAME(month, @DateInProcess) as varchar(11)),
 				CAST (Year(@DateInProcess) as int),
 				CAST (DATENAME(dw, @DateInProcess) as varchar(12)),
-				'dzieñ wolny'
+				'dzieñ wolny',
+				MONTH(@DateInProcess)
 			)
 		else
 			INSERT INTO Termin VALUES (
@@ -23,7 +24,8 @@ While @DateInProcess <= @EndDate
 				CAST(DATENAME(month, @DateInProcess) as varchar(11)),
 				CAST (Year(@DateInProcess) as int),
 				CAST (DATENAME(dw, @DateInProcess) as varchar(12)),
-				'dzieñ pracuj¹cy'
+				'dzieñ pracuj¹cy',
+				MONTH(@DateInProcess)
 			)
 		set @DateInProcess = DATEADD(d, 1, @DateInProcess);
 	End

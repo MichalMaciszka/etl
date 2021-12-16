@@ -20,7 +20,8 @@ CREATE TABLE Termin
 	Rok INTEGER CHECK (Rok >= 1950 AND Rok <= 2100),
 	Dzien_tygodnia VARCHAR(12) CHECK(Dzien_tygodnia IN 
 		('poniedzia³ek', 'wtorek', 'œroda', 'czwartek', 'pi¹tek', 'sobota', 'niedziela')),
-	DzienWolny VARCHAR(15) CHECK (DzienWolny IN ('dzieñ wolny', 'dzieñ pracuj¹cy'))
+	DzienWolny VARCHAR(15) CHECK (DzienWolny IN ('dzieñ wolny', 'dzieñ pracuj¹cy')),
+	NoMonth INT CHECK (NoMonth <= 12)
 )
 
 CREATE TABLE Samochod 
